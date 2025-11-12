@@ -1,0 +1,459 @@
+<!DOCTYPE index.html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="TechInfo - Votre source d'informations sur la technologie, les actualités tech et les guides pratiques">
+    <meta name="keywords" content="technologie, actualités tech, tutoriels, guides, informatique">
+    <title>TechInfo - Actualités et Guides Technologie</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f4f4f4;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+
+        .nav-links a:hover {
+            opacity: 0.8;
+        }
+
+        /* Espace pour bannière AdSense - Top Banner */
+        .ad-banner-top {
+            background: #e0e0e0;
+            text-align: center;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 728px;
+            height: 90px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px dashed #999;
+            color: #666;
+        }
+
+        /* Container principal */
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 2rem;
+        }
+
+        /* Contenu principal */
+        .main-content {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .article {
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .article:last-child {
+            border-bottom: none;
+        }
+
+        .article-header {
+            margin-bottom: 1rem;
+        }
+
+        .article-title {
+            font-size: 2rem;
+            color: #667eea;
+            margin-bottom: 0.5rem;
+        }
+
+        .article-meta {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .article-image {
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 8px;
+            margin: 1rem 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        .article-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #444;
+        }
+
+        .article-content p {
+            margin-bottom: 1rem;
+        }
+
+        .read-more {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.7rem 1.5rem;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        .read-more:hover {
+            background: #764ba2;
+        }
+
+        /* Sidebar avec espaces publicitaires */
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .sidebar-section {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .sidebar-title {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: #667eea;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 0.5rem;
+        }
+
+        .sidebar-list {
+            list-style: none;
+        }
+
+        .sidebar-list li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .sidebar-list li:last-child {
+            border-bottom: none;
+        }
+
+        .sidebar-list a {
+            color: #333;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .sidebar-list a:hover {
+            color: #667eea;
+        }
+
+        /* Espaces publicitaires sidebar */
+        .ad-sidebar {
+            background: #e0e0e0;
+            text-align: center;
+            padding: 20px;
+            height: 250px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px dashed #999;
+            color: #666;
+            border-radius: 8px;
+        }
+
+        /* Espace publicitaire dans le contenu */
+        .ad-inline {
+            background: #e0e0e0;
+            text-align: center;
+            padding: 20px;
+            margin: 2rem 0;
+            height: 250px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px dashed #999;
+            color: #666;
+            border-radius: 8px;
+        }
+
+        /* Footer */
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-links {
+                gap: 1rem;
+                flex-wrap: wrap;
+            }
+
+            .article-title {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">🚀 TechInfo</div>
+            <ul class="nav-links">
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#actualites">Actualités</a></li>
+                <li><a href="#guides">Guides</a></li>
+                <li><a href="#reviews">Reviews</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Bannière publicitaire top (728x90) -->
+    <div class="ad-banner-top">
+        📢 Espace publicitaire Google AdSense 728x90
+    </div>
+
+    <!-- Container principal -->
+    <div class="container">
+        <!-- Contenu principal -->
+        <main class="main-content">
+            <!-- Article 1 -->
+            <article class="article" id="accueil">
+                <div class="article-header">
+                    <h1 class="article-title">Les 10 Meilleures Technologies de 2024</h1>
+                    <div class="article-meta">📅 12 Novembre 2024 | ✍️ Par Jean Dupont | 💬 15 Commentaires</div>
+                </div>
+                <div class="article-image">🖼️ Image de l'article</div>
+                <div class="article-content">
+                    <p>La technologie évolue à un rythme impressionnant en 2024. De l'intelligence artificielle à la réalité virtuelle, découvrez les innovations qui transforment notre quotidien et façonnent l'avenir de notre société numérique.</p>
+                    <p>L'année 2024 marque un tournant majeur dans l'évolution technologique. Les avancées en matière d'IA générative, de computing quantique et de technologies vertes redéfinissent les possibilités et ouvrent de nouvelles perspectives pour les années à venir.</p>
+                    <p>Dans cet article complet, nous explorons en détail les technologies qui font sensation cette année, leurs applications pratiques, et comment elles impactent différents secteurs de l'industrie et notre vie quotidienne.</p>
+                </div>
+                <a href="#" class="read-more">Lire la suite →</a>
+            </article>
+
+            <!-- Publicité inline -->
+            <div class="ad-inline">
+                📢 Espace publicitaire Google AdSense 336x280
+            </div>
+
+            <!-- Article 2 -->
+            <article class="article" id="actualites">
+                <div class="article-header">
+                    <h2 class="article-title">Guide Complet : Comment Protéger vos Données en Ligne</h2>
+                    <div class="article-meta">📅 10 Novembre 2024 | ✍️ Par Marie Martin | 💬 23 Commentaires</div>
+                </div>
+                <div class="article-image">🔒 Sécurité en ligne</div>
+                <div class="article-content">
+                    <p>La sécurité en ligne n'a jamais été aussi cruciale. Avec l'augmentation des cyberattaques et des violations de données, protéger vos informations personnelles est devenu une priorité absolue pour tous les internautes.</p>
+                    <p>Ce guide pratique vous présente les meilleures pratiques de sécurité, des outils essentiels pour protéger votre vie privée, et des conseils d'experts pour naviguer en toute sécurité sur Internet.</p>
+                    <p>Apprenez à créer des mots de passe robustes, à utiliser l'authentification à deux facteurs, à détecter les tentatives de phishing, et à sécuriser tous vos appareils connectés.</p>
+                </div>
+                <a href="#" class="read-more">Lire la suite →</a>
+            </article>
+
+            <!-- Publicité inline -->
+            <div class="ad-inline">
+                📢 Espace publicitaire Google AdSense 336x280
+            </div>
+
+            <!-- Article 3 -->
+            <article class="article" id="guides">
+                <div class="article-header">
+                    <h2 class="article-title">Intelligence Artificielle : Comprendre les Bases</h2>
+                    <div class="article-meta">📅 8 Novembre 2024 | ✍️ Par Pierre Dubois | 💬 31 Commentaires</div>
+                </div>
+                <div class="article-image">🤖 Intelligence Artificielle</div>
+                <div class="article-content">
+                    <p>L'intelligence artificielle est partout autour de nous, mais combien d'entre nous comprennent réellement son fonctionnement ? Cet article démystifie l'IA et explique ses concepts fondamentaux de manière accessible.</p>
+                    <p>Découvrez comment les réseaux de neurones artificiels apprennent, ce qu'est le machine learning, et comment l'IA transforme des industries entières, de la santé à l'automobile en passant par la finance.</p>
+                    <p>Nous explorons également les implications éthiques de l'IA, ses limites actuelles, et les défis que nous devons relever pour un développement responsable de cette technologie révolutionnaire.</p>
+                </div>
+                <a href="#" class="read-more">Lire la suite →</a>
+            </article>
+
+            <!-- Section Reviews -->
+            <article class="article" id="reviews">
+                <div class="article-header">
+                    <h2 class="article-title">🌟 Reviews des Meilleurs Produits Tech</h2>
+                    <div class="article-meta">📅 5 Novembre 2024 | ✍️ Par Sophie Laurent | 💬 18 Commentaires</div>
+                </div>
+                <div class="article-image">⭐ Reviews & Tests</div>
+                <div class="article-content">
+                    <p>Chaque semaine, nous testons les derniers produits technologiques pour vous aider à faire les meilleurs choix. Des smartphones aux ordinateurs portables, en passant par les accessoires gaming et les gadgets connectés.</p>
+                    <p>Nos reviews sont complètes, impartiales et basées sur des tests approfondis en conditions réelles. Nous analysons les performances, le design, le rapport qualité-prix et la durabilité de chaque produit.</p>
+                    <p>Consultez nos dernières reviews et découvrez nos recommandations pour trouver le produit parfait adapté à vos besoins et votre budget.</p>
+                </div>
+                <a href="#" class="read-more">Voir toutes les reviews →</a>
+            </article>
+
+            <!-- Section Contact -->
+            <article class="article" id="contact">
+                <div class="article-header">
+                    <h2 class="article-title">📞 Contactez-nous</h2>
+                </div>
+                <div class="article-content">
+                    <p style="font-size: 1.2rem; margin-bottom: 2rem;">Vous avez des questions, des suggestions ou souhaitez collaborer avec nous ? N'hésitez pas à nous contacter !</p>
+                    
+                    <h3 style="color: #667eea; margin-top: 2rem; margin-bottom: 1rem;">💬 Discord</h3>
+                    <p style="background: #5865F2; color: white; padding: 1rem; border-radius: 8px; font-size: 1.2rem; text-align: center; font-weight: bold;">uneballetucreve</p>
+                    
+                    <h3 style="color: #667eea; margin-top: 2rem; margin-bottom: 1rem;">📧 Email</h3>
+                    <p>Vous pouvez également nous envoyer un email à : <strong>contact@techinfo.fr</strong></p>
+                    
+                    <h3 style="color: #667eea; margin-top: 2rem; margin-bottom: 1rem;">⏰ Délai de réponse</h3>
+                    <p>Nous nous efforçons de répondre à tous les messages dans les 24-48 heures.</p>
+                </div>
+            </article>
+        </main>
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <!-- Publicité sidebar -->
+            <div class="ad-sidebar">
+                📢 Google AdSense<br>300x250
+            </div>
+
+            <!-- Articles populaires -->
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">📊 Articles Populaires</h3>
+                <ul class="sidebar-list">
+                    <li><a href="#">Top 5 des smartphones 2024</a></li>
+                    <li><a href="#">VPN : Comment choisir le meilleur</a></li>
+                    <li><a href="#">Cloud Computing expliqué simplement</a></li>
+                    <li><a href="#">Les meilleurs PC portables gaming</a></li>
+                    <li><a href="#">Blockchain pour les débutants</a></li>
+                </ul>
+            </div>
+
+            <!-- Publicité sidebar -->
+            <div class="ad-sidebar">
+                📢 Google AdSense<br>300x250
+            </div>
+
+            <!-- Catégories -->
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">📂 Catégories</h3>
+                <ul class="sidebar-list">
+                    <li><a href="#">Actualités Tech (45)</a></li>
+                    <li><a href="#">Tutoriels (32)</a></li>
+                    <li><a href="#">Reviews (28)</a></li>
+                    <li><a href="#">Guides d'achat (19)</a></li>
+                    <li><a href="#">Sécurité (15)</a></li>
+                </ul>
+            </div>
+
+            <!-- Newsletter -->
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">📧 Newsletter</h3>
+                <p style="margin-bottom: 1rem;">Recevez nos derniers articles directement dans votre boîte mail !</p>
+                <input type="email" placeholder="Votre email" style="width: 100%; padding: 0.7rem; border: 1px solid #ddd; border-radius: 5px; margin-bottom: 0.5rem;">
+                <button style="width: 100%; padding: 0.7rem; background: #667eea; color: white; border: none; border-radius: 5px; cursor: pointer;">S'inscrire</button>
+            </div>
+
+            <!-- Contact Discord -->
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">💬 Contact</h3>
+                <p style="margin-bottom: 0.5rem;">Une question ? Contactez-moi sur Discord :</p>
+                <p style="background: #5865F2; color: white; padding: 0.7rem; border-radius: 5px; text-align: center; font-weight: bold;">uneballetucreve</p>
+            </div>
+        </aside>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="#">À propos</a>
+                <a href="#">Politique de confidentialité</a>
+                <a href="#">Mentions légales</a>
+                <a href="#">Conditions d'utilisation</a>
+                <a href="#">Contact</a>
+            </div>
+            <p>&copy; 2024 TechInfo. Tous droits réservés.</p>
+        </div>
+    </footer>
+</body>
+</html>
